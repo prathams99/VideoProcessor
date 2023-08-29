@@ -46,6 +46,7 @@ int main() {
         // Wait for all threads to complete
         for (int i = 0; i < 4; ++i) {
             threads[i].join();
+             processor.cleanup(operations[i]);  // Cleanup after the thread has joined
         }
 
     } catch (const std::exception& e) {

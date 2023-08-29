@@ -3,10 +3,10 @@
 
 int main() {  // Main function
     VideoProcessor processor;  // Create an instance of the VideoProcessor class
-    
+
     std::thread threads[4];  // Declare an array of 4 threads
     Operation operations[4] = {{1}, {2}, {3}, {4}};  // Declare and initialize an array of 4 operations
-    
+
     // Loop to spawn threads to run the video processing function
     for (int i = 0; i < 4; ++i) {
         threads[i] = std::thread([&processor, &operations, i]() {  // Capture the processor and operations by reference, and i by value

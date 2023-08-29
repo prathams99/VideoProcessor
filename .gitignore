@@ -1,0 +1,35 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+
+# Temporary files created by editors
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Build directory (change this if you have a different one)
+build/
+debug/
+release/
+
+# Dependency files that might be generated during build
+*.d
+
+# Miscellaneous
+.DS_Store
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated Makefile (some systems might generate these)
+Makefile.in
+autom4te.cache/
+
+# VideoProcessorApp
+VideoProcessorApp

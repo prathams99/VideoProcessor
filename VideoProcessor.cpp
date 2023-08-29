@@ -19,7 +19,7 @@ bool VideoProcessor::processVideo(Operation& o) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));  // Simulate a time-consuming operation
 
         // Display the current progress of the operation
-        std::cout << "\rOperation " << o.id << " progress: " << std::setw(4) << i << "/5000 ms" << std::flush;
+        std::cout << "\rOperation " << o.id << " progress: " << std::setw(15) << i << "/5000 ms" << std::flush;
 
         {
             std::unique_lock<std::mutex> lock(mtx);  // Lock the mutex again for thread-safety

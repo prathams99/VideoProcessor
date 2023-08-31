@@ -28,7 +28,7 @@ public:
 
 private:
     std::mutex mtx;  // Mutex for ensuring thread safety for the `operation_status` map
-
+    std::mutex processing_mtx; // New mutex for ensuring only one operation processes at a time
     // Unordered map to hold the status of operations, keyed by their IDs
     std::unordered_map<int, OperationStatus> operation_status;
 };

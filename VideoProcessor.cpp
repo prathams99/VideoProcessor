@@ -15,11 +15,13 @@ bool VideoProcessor::processVideo(Operation& o) {
 
     std::cout << "Started processing video for operation: " << o.id << std::endl;  // Print a message indicating the start of the operation
 
-    for (int i = 0; i < 5000; i++) {
+    for (int i = 1; i <= 5000; i++) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));  // Simulate a time-consuming operation
 
+        if ((i % 1000) == 0) {
         // Display the current progress of the operation
-        std::cout << "\rOperation " << o.id << " progress: " << std::setw(15) << i << "/5000 ms" << std::flush;
+            std::cout << "\n\rOperation " << o.id << " progress: " << std::setw(15) << i << "/5000 ms" << std::flush;
+        }
 
         {
             std::unique_lock<std::mutex> lock(mtx);  // Lock the mutex again for thread-safety
